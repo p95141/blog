@@ -1,4 +1,11 @@
 {% extends 'main/base.html' %}
 {% block heading %}歡迎蒞臨{% endblock %}
 {% block content %}
+<br>
+{% for article in articles %}
+  <h3>{{ article.title }}</h3>
+  <p>發表時間：{{ article.pubDateTime|date:'Y-m-d H:i' }}</p>
+  <div class="articleContent">{{ article.content|linebreaks}}</div>
+  <hr>
+{% endfor %}
 {% endblock %}
